@@ -1,5 +1,7 @@
 import { styled } from '../../stitches.config'
 import { BaseNavLink } from '../Link'
+import { Paragraph } from '../Paragraph'
+import { getYear } from 'date-fns'
 
 type FooterProps = {
   links: {
@@ -12,9 +14,13 @@ const Container = styled('footer', {
   background: '$background',
   display: 'flex',
   alignItems: 'center',
-  justifyContent: 'center',
-  gap: '$5',
+  justifyContent: 'space-between',
   height: '60px',
+})
+
+const LinksContainer = styled('div', {
+  display: 'flex',
+  gap: '$5',
 })
 
 const Link = styled(BaseNavLink)
@@ -25,13 +31,18 @@ const Title = styled('span', {
 })
 
 export function Footer({ links }: FooterProps) {
+  const currentYear = getYear(new Date())
+
   return (
     <Container>
-      {links.map(({ href, description }) => (
-        <Link key={href} href={href} target="_blank">
-          <Title>{description}</Title>
-        </Link>
-      ))}
+      <Paragraph>&copy; {currentYear} – Rubem Neto</Paragraph>
+      <LinksContainer>
+        {links.map(({ href, description }) => (
+          <Link key={href} href={href} target="_blank">
+            <Title>{description}</Title>
+          </Link>
+        ))}
+      </LinksContainer>
     </Container>
   )
 }

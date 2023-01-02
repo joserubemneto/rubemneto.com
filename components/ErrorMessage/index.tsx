@@ -5,18 +5,20 @@ import { Link } from '../Link'
 import { Paragraph } from '../Paragraph'
 
 type ErrorMessageProps = {
+  title: string
+  description: string
   code: number
 }
 
-export function ErrorMessage({ code }: ErrorMessageProps) {
-  let title = 'five hundred'
-  let description = "Something isn't right."
+const Container = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  gap: '$5',
+  margin: '$64 0',
+})
 
-  if (code === 404) {
-    title = 'Oh oh, page not found.'
-    description = "This page doesn't exist."
-  }
-
+export function ErrorMessage({ code, title, description }: ErrorMessageProps) {
   return (
     <Container>
       <Heading as="h1">{title}</Heading>
@@ -27,11 +29,3 @@ export function ErrorMessage({ code }: ErrorMessageProps) {
     </Container>
   )
 }
-
-const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '$5',
-  margin: '$64 0',
-})

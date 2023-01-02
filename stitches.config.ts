@@ -28,7 +28,6 @@ export const {
     },
     fonts: {
       body: 'Biotif, sans-serif',
-      code: 'Fira Code, monospace',
       heading: 'Neuzeit Grotesk Bold, sans-serif',
     },
     fontSizes: {
@@ -94,13 +93,6 @@ const globalStyles = globalCss({
       fontFamily: 'Neuzeit Grotesk Bold',
       src: `url("/static/font/NeuzeitGrotesk-Bold.woff2") format("woff2"),
         url("/static/font/NeuzeitGrotesk-Bold.woff") format("woff")`,
-      fontWeight: 'normal',
-      fontStyle: 'normal',
-    },
-    {
-      fontFamily: 'Fira Code',
-      src: `url("/static/font/FiraCode-Regular.woff2") format("woff2"),
-        url("/static/font/FiraCode-Regular.woff") format("woff")`,
       fontWeight: 'normal',
       fontStyle: 'normal',
     },

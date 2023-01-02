@@ -44,7 +44,7 @@ export default function Index() {
           Here I will share things about my work, life and side projects.
         </Paragraph>
 
-        <Link href="/about">
+        <Link href="/about" css={{ gap: '$2' }}>
           More about me <ArrowRight />
         </Link>
       </ContentContainer>

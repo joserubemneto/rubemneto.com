@@ -151,7 +151,9 @@ export default function About() {
                   <ExperienceHeadline>
                     <Heading as="h3">{jobTitle}</Heading>
                     <Paragraph>-</Paragraph>
-                    <Link href={company.href}>{company.name}</Link>
+                    <Link href={company.href} target="_blank">
+                      {company.name}
+                    </Link>
                     <Paragraph>• {location}</Paragraph>
                   </ExperienceHeadline>
                   <Paragraph>

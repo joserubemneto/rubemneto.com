@@ -24,6 +24,7 @@ export const Link = styled(NextLink, {
   fontSize: '$lg',
   textDecoration: 'none',
   transition: 'opacity $duration ease-in-out',
+  gap: '$2',
 
   '&:hover, &:focus': {
     opacity: '0.8',

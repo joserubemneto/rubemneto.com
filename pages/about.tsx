@@ -1,10 +1,18 @@
 import { parseISO, format, intervalToDuration } from 'date-fns'
+import Head from 'next/head'
 import { Divider } from '../components/Divider'
 import { Heading } from '../components/Heading'
 import { BaseImage } from '../components/Image'
 import { Link } from '../components/Link'
 import { Paragraph } from '../components/Paragraph'
 import { styled } from '../styles/theme/stitches.config'
+
+type AboutProps = {
+  meta: {
+    title: string
+    description: string
+  }
+}
 
 type Career = {
   jobTitle: string
@@ -58,9 +66,14 @@ const Grid = styled('div', {
   display: 'flex',
   gap: '$16',
   marginTop: '$10',
+
+  '@bp2': {
+    flexDirection: 'column',
+  },
 })
 
 const Image = styled(BaseImage, {
+  maxWidth: '220px',
   height: '220px',
 })
 
@@ -78,10 +91,11 @@ export const Experience = styled('div', {
   },
 })
 
-export const ExperienceHeadline = styled('div', {
+export const ExperienceCompany = styled('div', {
   display: 'flex',
   alignItems: 'center',
   gap: '$1',
+  marginTop: '$2',
 })
 
 function formatDate(date: string): string {
@@ -114,12 +128,19 @@ function getExperienceDuration(
   return durationStr
 }
 
-export default function About() {
+export default function About({ meta }: AboutProps) {
+  const { title, description } = meta
+
   return (
     <Container>
+      <Head>
+        <title>{title}</title>
+        <meta content={description} name="description" />
+      </Head>
+
       <Heading as="h1">About</Heading>
       <Grid>
-        <Image src="/static/images/profile.jpeg" />
+        <Image src="/static/images/profile.jpeg" alt="Rubem" />
         <div>
           <AboutContainer>
             <Paragraph>
@@ -148,14 +169,13 @@ export default function About() {
             {career.map(
               ({ jobTitle, company, location, startDate, endDate }) => (
                 <Experience key={company.name}>
-                  <ExperienceHeadline>
-                    <Heading as="h3">{jobTitle}</Heading>
-                    <Paragraph>-</Paragraph>
+                  <Heading as="h3">{jobTitle}</Heading>
+                  <ExperienceCompany>
                     <Link href={company.href} target="_blank">
                       {company.name}
                     </Link>
                     <Paragraph>• {location}</Paragraph>
-                  </ExperienceHeadline>
+                  </ExperienceCompany>
                   <Paragraph>
                     <span>{formatDate(startDate)}</span>
                     <span> - </span>
@@ -184,4 +204,16 @@ export default function About() {
       </Grid>
     </Container>
   )
+}
+
+export async function getStaticProps() {
+  return {
+    props: {
+      meta: {
+        title: 'About | Rubem Neto',
+        description:
+          'Rubem Neto is a Brazilian Frontend Engineer. He lives in Aveiro, Portugal and works on the software development field since 2018 and currently is build build the future of work at New Work SE.',
+      },
+    },
+  }
 }

@@ -8,6 +8,10 @@ export const Heading = styled('h2', {
         fontFamily: '$heading',
         fontSize: '$6xl',
         lineHeight: '50px',
+
+        '@bp1': {
+          fontSize: '$5xl',
+        },
       },
       h2: {
         fontSize: '$2xl',

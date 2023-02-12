@@ -29,7 +29,7 @@ export const {
   media,
 })
 
-const globalStyles = globalCss({
+export const globalStyles = globalCss({
   '*': {
     margin: '0',
     padding: '0',
@@ -39,6 +39,10 @@ const globalStyles = globalCss({
     WebkitFontSmoothing: 'antialiased',
     background: '$background',
     fontFamily: '$body',
+
+    '@bp2': {
+      fontSize: '87.5%',
+    },
   },
   '@font-face': [
     {
@@ -78,5 +82,3 @@ const globalStyles = globalCss({
     },
   ],
 })
-
-globalStyles()

@@ -2,11 +2,13 @@ import { styled } from '../../styles/theme/stitches.config'
 import { BaseNavLink } from '../Link'
 import { Paragraph } from '../Paragraph'
 import { getYear } from 'date-fns'
+import { ReactElement } from 'react'
 
 type FooterProps = {
   links: {
     description: string
     href: string
+    icon: ReactElement
   }[]
 }
 
@@ -26,8 +28,17 @@ const LinksContainer = styled('div', {
 const Link = styled(BaseNavLink)
 
 const Title = styled('span', {
+  display: 'block',
+  '@bp1': { display: 'none' },
+})
+
+const IconContainer = styled('span', {
+  fontSize: '$2xl',
   display: 'none',
-  '@bp2': { display: 'block' },
+
+  '@bp1': {
+    display: 'block',
+  },
 })
 
 export function Footer({ links }: FooterProps) {
@@ -37,8 +48,9 @@ export function Footer({ links }: FooterProps) {
     <Container>
       <Paragraph>&copy; {currentYear} – Rubem Neto</Paragraph>
       <LinksContainer>
-        {links.map(({ href, description }) => (
+        {links.map(({ href, description, icon }) => (
           <Link key={href} href={href} target="_blank">
+            <IconContainer>{icon}</IconContainer>
             <Title>{description}</Title>
           </Link>
         ))}

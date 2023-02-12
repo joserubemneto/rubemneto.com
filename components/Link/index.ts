@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 import NextLink from 'next/link'
 
 export const BaseNavLink = styled(NextLink, {
@@ -9,7 +9,7 @@ export const BaseNavLink = styled(NextLink, {
   textDecoration: 'none',
   textTransform: 'uppercase',
   letterSpacing: '1.5px',
-  transition: 'color $duration ease-in-out',
+  transition: 'color $base ease-in-out',
 
   '&:hover': {
     color: '$primary',
@@ -23,7 +23,7 @@ export const Link = styled(NextLink, {
   color: '$primary',
   fontSize: '$lg',
   textDecoration: 'none',
-  transition: 'opacity $duration ease-in-out',
+  transition: 'opacity $base ease-in-out',
   gap: '$2',
 
   '&:hover, &:focus': {

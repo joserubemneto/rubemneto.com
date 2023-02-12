@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 import { Footer } from '../Footer'
 import { Navbar } from '../Navbar'
 

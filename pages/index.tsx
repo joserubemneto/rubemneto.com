@@ -3,7 +3,7 @@ import { Heading } from '../components/Heading'
 import { BaseImage } from '../components/Image'
 import { Link } from '../components/Link'
 import { Paragraph } from '../components/Paragraph'
-import { styled } from '../stitches.config'
+import { styled } from '../styles/theme/stitches.config'
 
 const Container = styled('div', {
   display: 'flex',

@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 import { useRouter } from 'next/router'
 import { BaseNavLink } from '../Link'
 
@@ -25,7 +25,7 @@ const Logo = styled('a', {
   fontWeight: 700,
   fontSize: '$4xl',
   fontFamily: '$heading',
-  transition: 'opacity $duration ease-in-out',
+  transition: 'opacity $base ease-in-out',
 
   '&:hover, &:focus': {
     opacity: '0.8',

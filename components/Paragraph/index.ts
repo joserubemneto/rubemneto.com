@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 
 export const Paragraph = styled('p', {
   color: '$secondary',

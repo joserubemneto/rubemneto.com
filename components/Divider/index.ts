@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 
 export const Divider = styled('div', {
   width: '100%',

@@ -1,4 +1,4 @@
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 import { BaseNavLink } from '../Link'
 import { Paragraph } from '../Paragraph'
 import { getYear } from 'date-fns'
@@ -15,7 +15,7 @@ const Container = styled('footer', {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'space-between',
-  height: '60px',
+  padding: '$2 0',
 })
 
 const LinksContainer = styled('div', {

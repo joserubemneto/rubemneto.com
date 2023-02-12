@@ -1,6 +1,6 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '../stitches.config'
+import { getCssText } from '../styles/theme/stitches.config'
 
 export default class extends Document {
   render() {

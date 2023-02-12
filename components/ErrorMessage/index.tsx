@@ -1,5 +1,5 @@
 import { ArrowLeft } from 'phosphor-react'
-import { styled } from '../../stitches.config'
+import { styled } from '../../styles/theme/stitches.config'
 import { Heading } from '../Heading'
 import { Link } from '../Link'
 import { Paragraph } from '../Paragraph'

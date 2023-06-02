@@ -56,6 +56,8 @@ const LayoutContainer = styled('div', {
 })
 
 const ContentContainer = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
   flex: '1',
 })
 

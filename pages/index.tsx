@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import { ArrowRight } from 'phosphor-react'
 import { Heading } from '../components/Heading'
-import { BaseImage } from '../components/Image'
 import { Link } from '../components/Link'
 import { Paragraph } from '../components/Paragraph'
 import { styled } from '../styles/theme/stitches.config'
@@ -15,8 +14,9 @@ type HomeProps = {
 
 const Container = styled('div', {
   display: 'flex',
-  alignItems: 'center',
-  margin: '$64 0',
+  flexDirection: 'column',
+  flex: 1,
+  justifyContent: 'center',
   gap: '$8',
 })
 
@@ -38,16 +38,6 @@ const ContentContainer = styled('div', {
   },
 })
 
-const Image = styled(BaseImage, {
-  width: '60px',
-  height: '60px',
-  alignSelf: 'flex-start',
-
-  '@bp1': {
-    display: 'none',
-  },
-})
-
 export default function Index({ meta }: HomeProps) {
   const { title, description } = meta
 
@@ -57,7 +47,6 @@ export default function Index({ meta }: HomeProps) {
         <title>{title}</title>
         <meta content={description} name="description" />
       </Head>
-      <Image src="/static/images/profile.jpeg" alt="Rubem" />
       <ContentContainer>
         <Heading as="h1">Hi, I&apos;m Rubem Neto.</Heading>
         <Paragraph>

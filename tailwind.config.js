@@ -23,11 +23,12 @@ module.exports = {
       hover: '#212024',
       black: 'rgba(255, 255, 255, 0.05)',
     },
-    fontFamily: {
-      body: ['var(--font-inter)', 'sans-serif'],
-      heading: ['var(--font-poppins)', 'sans-serif'],
+    extend: {
+      fontFamily: {
+        body: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-poppins)', 'sans-serif'],
+      },
     },
-    extend: {},
   },
   plugins: [],
 }

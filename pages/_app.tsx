@@ -14,14 +14,12 @@ const poppins = Poppins({
 const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
-  weight: ['700', '600', '400'],
+  weight: ['700', '600', '400', '300'],
 })
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <main
-      className={`${poppins.variable} font-heading ${inter.variable} font-body`}
-    >
+    <main className={`${poppins.variable} ${inter.variable}`}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

@@ -6,17 +6,19 @@
   * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box
+    box-sizing: border-box;
+
+    @apply  font-body;
   }
 
   html, body {
-    @apply bg-background font-body
+    @apply bg-background;
   }
 }
 
 @layer components {
   .paragraph {
-    @apply text-secondary;
+    @apply text-secondary font-light;
   }
 
   .strong {

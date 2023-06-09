@@ -12,41 +12,6 @@
   html, body {
     @apply bg-background font-body
   }
-
-  @font-face {
-    font-family: 'Neuzeit Grotesk Bold';
-    src: url("/static/font/NeuzeitGrotesk-Bold.woff2") format("woff2"), url("/static/font/NeuzeitGrotesk-Bold.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Biotif';
-    src: url("/static/font/Biotif-Bold.woff2") format("woff2"), url("/static/font/Biotif-Bold.woff") format("woff");
-    font-weight: bold;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Biotif';
-    src: url("/static/font/Biotif-Book.woff2") format("woff2"), url("/static/font/Biotif-Book.woff") format("woff");
-    font-weight: 500;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Biotif';
-    src: url("/static/font/Biotif-Regular.woff2") format("woff2"), url("/static/font/Biotif-Regular.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-  }
-
-  @font-face {
-    font-family: 'Biotif';
-    src: url("/static/font/Biotif-RegularItalic.woff2") format("woff2"), url("/static/font/Biotif-RegularItalic.woff") format("woff");
-    font-weight: normal;
-    font-style: italic;
-  }
 }
 
 @layer components {

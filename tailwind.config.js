@@ -24,8 +24,8 @@ module.exports = {
       black: 'rgba(255, 255, 255, 0.05)',
     },
     fontFamily: {
-      body: 'Biotif, sans-serif',
-      heading: 'Neuzeit Grotesk Bold, sans-serif',
+      body: ['var(--font-inter)', 'sans-serif'],
+      heading: ['var(--font-poppins)', 'sans-serif'],
     },
     extend: {},
   },

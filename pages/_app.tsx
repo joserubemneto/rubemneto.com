@@ -1,10 +1,9 @@
 import { AppProps } from 'next/app'
 import { Layout } from '../components/Layout'
-import { globalStyles } from '../styles/theme/stitches.config'
+
+import '../styles/global.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  globalStyles()
-
   return (
     <Layout>
       <Component {...pageProps} />

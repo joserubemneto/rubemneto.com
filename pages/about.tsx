@@ -1,11 +1,6 @@
 import { parseISO, format, intervalToDuration } from 'date-fns'
 import Head from 'next/head'
-import { Divider } from '../components/Divider'
-import { Heading } from '../components/Heading'
-import { BaseImage } from '../components/BaseImage'
 import { Link } from '../components/Link'
-import { Paragraph } from '../components/Paragraph'
-import { styled } from '../styles/theme/stitches.config'
 
 type AboutProps = {
   meta: {
@@ -58,46 +53,6 @@ const career: Career[] = [
   },
 ]
 
-const Container = styled('div', {
-  margin: '$8 0',
-})
-
-const Grid = styled('div', {
-  display: 'flex',
-  gap: '$16',
-  marginTop: '$10',
-
-  '@bp2': {
-    flexDirection: 'column',
-  },
-})
-
-const Image = styled(BaseImage, {
-  maxWidth: '220px',
-  height: '220px',
-})
-
-export const AboutContainer = styled('div', {
-  [`& ${Paragraph}`]: {
-    marginTop: '$5',
-  },
-})
-
-export const Experience = styled('div', {
-  marginTop: '$10',
-
-  [`& > ${Paragraph}`]: {
-    marginTop: '$2',
-  },
-})
-
-export const ExperienceCompany = styled('div', {
-  display: 'flex',
-  alignItems: 'center',
-  gap: '$1',
-  marginTop: '$2',
-})
-
 function formatDate(date: string): string {
   return format(parseISO(date), 'LLL yyyy')
 }
@@ -132,77 +87,85 @@ export default function About({ meta }: AboutProps) {
   const { title, description } = meta
 
   return (
-    <Container>
+    <div className="my-8">
       <Head>
         <title>{title}</title>
         <meta content={description} name="description" />
       </Head>
 
-      <Heading as="h1">About</Heading>
-      <Grid>
-        <Image src="/static/images/profile.jpeg" alt="Rubem" />
+      <h1 className="h1">About</h1>
+      <div className="mt-10 flex flex-col gap-16 md:flex-row">
+        <img
+          className="h-56 w-56 max-w-full rounded-lg object-cover"
+          src="/static/images/profile.jpeg"
+          alt="Rubem"
+        />
         <div>
-          <AboutContainer>
-            <Paragraph>
+          <div>
+            <p className="paragraph">
               I&apos;m Rubem, I started my developer journey in 2018, studying
               about frontend using HTML, CSS and JavaScript.
-            </Paragraph>
-            <Paragraph>
-              I&apos;m working as a <strong>Frontend Engineer</strong> at NEW
-              WORK SE and studying{' '}
-              <strong>Informatic&apos;s Engineering</strong> at Univesity of
-              Aveiro - Portugal. I&apos;m from Caruaru, Pernambuco, Brazil and
-              now <strong>I&apos;m living in Aveiro, Portugal</strong> with my
-              lovely wife and amazing son.
-            </Paragraph>
+            </p>
+            <p className="paragraph mt-5">
+              I&apos;m working as a{' '}
+              <strong className="strong">Frontend Engineer</strong> at NEW WORK
+              SE and studying{' '}
+              <strong className="strong">Informatic&apos;s Engineering</strong>{' '}
+              at Univesity of Aveiro - Portugal. I&apos;m from Caruaru,
+              Pernambuco, Brazil and now{' '}
+              <strong className="strong">
+                I&apos;m living in Aveiro, Portugal
+              </strong>{' '}
+              with my lovely wife and amazing son.
+            </p>
 
-            <Paragraph>
+            <p className="paragraph mt-5">
               On my free time I love to watch and play football, get out to eat
               and travel with my family.
-            </Paragraph>
-          </AboutContainer>
+            </p>
+          </div>
 
-          <Divider />
+          <div className="my-10 h-px w-full bg-black" />
 
           <section>
-            <Heading as="h2">Career</Heading>
+            <h2 className="h2">Career</h2>
             {career.map(
               ({ jobTitle, company, location, startDate, endDate }) => (
-                <Experience key={company.name}>
-                  <Heading as="h3">{jobTitle}</Heading>
-                  <ExperienceCompany>
+                <div className="mt-10" key={company.name}>
+                  <h3 className="h3">{jobTitle}</h3>
+                  <div className="mt-2 flex items-center gap-1">
                     <Link href={company.href} target="_blank">
                       {company.name}
                     </Link>
-                    <Paragraph>• {location}</Paragraph>
-                  </ExperienceCompany>
-                  <Paragraph>
+                    <p className="paragraph">• {location}</p>
+                  </div>
+                  <p className="paragraph mt-2">
                     <span>{formatDate(startDate)}</span>
                     <span> - </span>
                     <span>{endDate ? formatDate(endDate) : 'Present'}</span>
                     <span> • </span>
                     <span>{getExperienceDuration(startDate, endDate)}</span>
-                  </Paragraph>
-                </Experience>
+                  </p>
+                </div>
               ),
             )}
           </section>
 
-          <Divider />
+          <div className="my-10 h-px w-full bg-black" />
 
           <section>
-            <Heading as="h2">Contact</Heading>
+            <h2 className="h2">Contact</h2>
 
-            <Paragraph css={{ marginTop: '$10' }}>
+            <p className="paragraph mt-10">
               I&apos;m always open to talk about new ideas, help the software
               community to be event better or just to talk :). If you want to
               get in touch,{' '}
               <Link href="mailto:joserubemn31@gmail.com">let&apos;s talk.</Link>
-            </Paragraph>
+            </p>
           </section>
         </div>
-      </Grid>
-    </Container>
+      </div>
+    </div>
   )
 }
 

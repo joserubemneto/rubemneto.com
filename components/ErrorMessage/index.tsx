@@ -1,8 +1,5 @@
 import { ArrowLeft } from 'phosphor-react'
-import { styled } from '../../styles/theme/stitches.config'
-import { Heading } from '../Heading'
 import { Link } from '../Link'
-import { Paragraph } from '../Paragraph'
 
 type ErrorMessageProps = {
   title: string
@@ -10,22 +7,14 @@ type ErrorMessageProps = {
   code: number
 }
 
-const Container = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  gap: '$5',
-  margin: '$64 0',
-})
-
 export function ErrorMessage({ code, title, description }: ErrorMessageProps) {
   return (
-    <Container>
-      <Heading as="h1">{title}</Heading>
-      <Paragraph>{description}</Paragraph>
+    <div className="my-64 flex flex-col items-center gap-5">
+      <h1 className="h1">{title}</h1>
+      <p className="paragraph">{description}</p>
       <Link href="/">
         <ArrowLeft /> Back to Homepage
       </Link>
-    </Container>
+    </div>
   )
 }

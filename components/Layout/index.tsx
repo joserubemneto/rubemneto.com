@@ -1,6 +1,5 @@
 import { GithubLogo, LinkedinLogo } from 'phosphor-react'
 import { ReactElement, ReactNode } from 'react'
-import { styled } from '../../styles/theme/stitches.config'
 import { Footer } from '../Footer'
 import { Navbar } from '../Navbar'
 
@@ -41,32 +40,12 @@ const footerLinks: FooterLink[] = [
   },
 ]
 
-const LayoutContainer = styled('div', {
-  minHeight: '100vh',
-  maxWidth: '768px',
-  width: '100%',
-  margin: '0 auto',
-  display: 'flex',
-  flexDirection: 'column',
-  padding: '0 $4',
-
-  '@bp2': {
-    padding: '0 $6',
-  },
-})
-
-const ContentContainer = styled('div', {
-  display: 'flex',
-  flexDirection: 'column',
-  flex: '1',
-})
-
 export function Layout({ children }: LayoutProps) {
   return (
-    <LayoutContainer>
+    <main className="mx-auto my-0 flex min-h-screen w-full max-w-screen-md flex-col px-4 py-0 md:px-6">
       <Navbar links={navbarLinks} />
-      <ContentContainer>{children}</ContentContainer>
+      <div className="flex flex-1 flex-col">{children}</div>
       <Footer links={footerLinks} />
-    </LayoutContainer>
+    </main>
   )
 }

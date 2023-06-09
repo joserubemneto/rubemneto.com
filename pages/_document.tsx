@@ -1,6 +1,5 @@
 import React from 'react'
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '../styles/theme/stitches.config'
 
 export default class extends Document {
   render() {
@@ -11,10 +10,6 @@ export default class extends Document {
           <meta content="Rubem Neto" name="author" />
           <meta property="og:type" content="website" />
           <meta name="theme-color" content="#08070b" />
-          <style
-            id="stitches"
-            dangerouslySetInnerHTML={{ __html: getCssText() }}
-          />
 
           <link
             rel="icon"

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+  }
+
+  html, body {
+    @apply bg-background font-body
+  }
+
+  @font-face {
+    font-family: 'Neuzeit Grotesk Bold';
+    src: url("/static/font/NeuzeitGrotesk-Bold.woff2") format("woff2"), url("/static/font/NeuzeitGrotesk-Bold.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Biotif';
+    src: url("/static/font/Biotif-Bold.woff2") format("woff2"), url("/static/font/Biotif-Bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Biotif';
+    src: url("/static/font/Biotif-Book.woff2") format("woff2"), url("/static/font/Biotif-Book.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Biotif';
+    src: url("/static/font/Biotif-Regular.woff2") format("woff2"), url("/static/font/Biotif-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Biotif';
+    src: url("/static/font/Biotif-RegularItalic.woff2") format("woff2"), url("/static/font/Biotif-RegularItalic.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+  }
+}
+
+@layer components {
+  .paragraph {
+    @apply text-secondary;
+  }
+
+  .strong {
+    @apply text-primary font-medium;
+  }
+
+  .h1 {
+    @apply text-primary font-heading text-6xl sm:text-5xl
+  }
+
+  .h2 {
+    @apply text-primary font-semibold text-2xl
+  }
+
+  .h3 {
+    @apply text-primary font-semibold text-lg
+  }
+}

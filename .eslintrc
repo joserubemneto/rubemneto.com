@@ -31,7 +31,10 @@
         "trailingComma": "all",
         "arrowParens": "always",
         "semi": false,
-        "endOfLine": "auto"
+        "endOfLine": "auto",
+        "plugins": [
+          "prettier-plugin-tailwindcss"
+        ]
       }
     ],
     "react/react-in-jsx-scope": "off",

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    @apply  font-body;
+  }
+
+  html, body {
+    @apply bg-background;
+  }
+}
+
+@layer components {
+  .paragraph {
+    @apply text-secondary font-light;
+  }
+
+  .strong {
+    @apply text-primary font-medium;
+  }
+
+  .h1 {
+    @apply text-primary font-heading text-6xl sm:text-5xl
+  }
+
+  .h2 {
+    @apply text-primary font-semibold text-2xl
+  }
+
+  .h3 {
+    @apply text-primary font-semibold text-lg
+  }
+}

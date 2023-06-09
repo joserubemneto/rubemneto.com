@@ -1,6 +1,4 @@
-import { styled } from '../../styles/theme/stitches.config'
-import { BaseNavLink } from '../Link'
-import { Paragraph } from '../Paragraph'
+import { BaseNavLink as Link } from '../Link'
 import { getYear } from 'date-fns'
 import { ReactElement } from 'react'
 
@@ -12,49 +10,20 @@ type FooterProps = {
   }[]
 }
 
-const Container = styled('footer', {
-  background: '$background',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  padding: '$2 0',
-})
-
-const LinksContainer = styled('div', {
-  display: 'flex',
-  gap: '$5',
-})
-
-const Link = styled(BaseNavLink)
-
-const Title = styled('span', {
-  display: 'block',
-  '@bp1': { display: 'none' },
-})
-
-const IconContainer = styled('span', {
-  fontSize: '$2xl',
-  display: 'none',
-
-  '@bp1': {
-    display: 'block',
-  },
-})
-
 export function Footer({ links }: FooterProps) {
   const currentYear = getYear(new Date())
 
   return (
-    <Container>
-      <Paragraph>&copy; {currentYear} – Rubem Neto</Paragraph>
-      <LinksContainer>
+    <footer className="flex items-center justify-between bg-background py-2">
+      <p className="paragraph">&copy; {currentYear} – Rubem Neto</p>
+      <div className="flex gap-5">
         {links.map(({ href, description, icon }) => (
           <Link key={href} href={href} target="_blank">
-            <IconContainer>{icon}</IconContainer>
-            <Title>{description}</Title>
+            <span className="block text-2xl sm:hidden">{icon}</span>
+            <span className="hidden sm:block">{description}</span>
           </Link>
         ))}
-      </LinksContainer>
-    </Container>
+      </div>
+    </footer>
   )
 }
